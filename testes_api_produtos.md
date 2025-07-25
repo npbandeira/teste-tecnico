@@ -3,7 +3,8 @@
 ## 1. Listar produtos
 
 ```bash
-curl -X GET http://localhost:8000/api/produtos
+curl -X GET http://localhost:8000/api/produtos \
+  -H "Accept: application/json"
 ```
 
 ---
@@ -11,7 +12,8 @@ curl -X GET http://localhost:8000/api/produtos
 ## 2. Visualizar produto
 
 ```bash
-curl -X GET http://localhost:8000/api/produtos/1
+curl -X GET http://localhost:8000/api/produtos/1 \
+  -H "Accept: application/json"
 ```
 
 ---
@@ -20,6 +22,7 @@ curl -X GET http://localhost:8000/api/produtos/1
 
 ```bash
 curl -X POST http://localhost:8000/api/produtos \
+  -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -d '{
     "nome": "Monitor",
@@ -34,6 +37,7 @@ curl -X POST http://localhost:8000/api/produtos \
 
 ```bash
 curl -X PUT http://localhost:8000/api/produtos/2 \
+  -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -d '{
     "nome": "Monitor 4K",
@@ -46,7 +50,8 @@ curl -X PUT http://localhost:8000/api/produtos/2 \
 ## 5. Excluir produto
 
 ```bash
-curl -X DELETE http://localhost:8000/api/produtos/2
+curl -X DELETE http://localhost:8000/api/produtos/2 \
+  -H "Accept: application/json"
 ```
 
 ---
@@ -55,6 +60,7 @@ curl -X DELETE http://localhost:8000/api/produtos/2
 
 ```bash
 curl -X POST http://localhost:8000/api/produtos \
+  -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -d '{
     "preco": 999.99,
