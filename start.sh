@@ -21,6 +21,10 @@ docker compose exec app composer install
 printf '\n==> Ajustando permissões...\n'
 docker compose exec app bash -c "chmod -R 777 storage bootstrap/cache"
 
+# Gera a chave da aplicação Laravel
+printf '\n==> Gerando chave da aplicação (key:generate)...\n'
+docker compose exec app php artisan key:generate
+
 # Roda migrations e seeders (opcional)
 printf '\n==> Rodando migrations e seeders...\n'
 docker compose exec app php artisan migrate:fresh --seed
