@@ -1,4 +1,6 @@
-## Teste Técnico - Instruções Simples
+## Teste Técnico
+
+[➡️ Exemplos de testes com curl para a API de Produtos](./testes_api_produtos.md)
 
 ### Pré-requisitos
 
@@ -7,22 +9,32 @@
 ### Como rodar o projeto
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    cd seu-repositorio
    ```
 
-2. Dê permissão ao script (se necessário):
+2. Copie o arquivo de variáveis de ambiente de exemplo:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Dê permissão ao script (se necessário):
+
    ```bash
    chmod +x start.sh
    ```
 
-3. Execute o script para subir o ambiente:
+4. Execute o script para subir o ambiente:
+
    ```bash
-   ./script.sh
+   ./start.sh
    ```
 
-4. Ou, se preferir, use o Docker Compose diretamente:
+5. Ou, se preferir, use o Docker Compose diretamente:
+
    ```bash
    docker compose up
    ```
@@ -36,14 +48,19 @@
 ### Dicas
 
 - Para parar os containers:
+
   ```bash
   docker compose down
   ```
+
 - Para remover containers parados:
+
   ```bash
   docker rm $(docker ps -aq)
   ```
+
 - Para limpar imagens não usadas:
+
   ```bash
   docker image prune
   ```
@@ -64,8 +81,10 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ### Endpoints
 
 #### 1. Listar produtos
+
 - **GET** `/api/produtos`
 - **Resposta:**
+
 ```json
 [
   {
@@ -81,8 +100,10 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ```
 
 #### 2. Visualizar produto
+
 - **GET** `/api/produtos/{id}`
 - **Resposta:**
+
 ```json
 {
   "id": 1,
@@ -95,8 +116,10 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ```
 
 #### 3. Criar produto
+
 - **POST** `/api/produtos`
 - **Body:**
+
 ```json
 {
   "nome": "Monitor",
@@ -104,11 +127,13 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
   "quantidade": 5
 }
 ```
+
 - **Validações:**
   - `nome`: obrigatório, string
   - `preco`: obrigatório, numérico, maior que 0
   - `quantidade`: obrigatório, inteiro, maior ou igual a 0
 - **Resposta:**
+
 ```json
 {
   "id": 2,
@@ -121,19 +146,23 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ```
 
 #### 4. Editar produto
+
 - **PUT/PATCH** `/api/produtos/{id}`
 - **Body:** (qualquer campo pode ser enviado)
+
 ```json
 {
   "nome": "Monitor 4K",
   "preco": 1200.00
 }
 ```
+
 - **Validações:**
   - `nome`: string
   - `preco`: numérico, maior que 0
   - `quantidade`: inteiro, maior ou igual a 0
 - **Resposta:**
+
 ```json
 {
   "id": 2,
@@ -146,8 +175,10 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ```
 
 #### 5. Excluir produto
+
 - **DELETE** `/api/produtos/{id}`
 - **Resposta:**
+
 ```json
 {
   "mensagem": "Produto excluído com sucesso."
@@ -155,9 +186,11 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
 ```
 
 ### Observações
+
 - Todos os retornos são em JSON.
 - Utilize ferramentas como Postman, Insomnia ou curl para testar.
 - Em caso de erro de validação, a resposta será:
+
 ```json
 {
   "message": "The given data was invalid.",
@@ -167,6 +200,3 @@ A API permite cadastrar, listar, editar, visualizar e excluir produtos.
   }
 }
 ```
-
-
-
