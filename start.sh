@@ -29,4 +29,4 @@ docker compose exec app php artisan migrate:fresh --seed
 printf '\n==> Status dos containers:\n'
 docker compose ps
 
-printf '\n==> Tudo pronto! Acesse: http://localhost/api/produtos\n'
+printf '\n==> Tudo pronto! Acesse: http://localhost:8000/api/produtos\n'
