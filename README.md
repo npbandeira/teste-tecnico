@@ -11,8 +11,8 @@
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/npbandeira/teste-tecnico.git
+   cd teste-tecnico
    ```
 
 2. Copie o arquivo de variáveis de ambiente de exemplo:
