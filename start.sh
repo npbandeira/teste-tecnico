@@ -19,7 +19,7 @@ docker compose exec app composer install
 
 # Ajusta permissões
 printf '\n==> Ajustando permissões...\n'
-docker compose exec app bash -c "chown -R www-data:www-data storage bootstrap/cache && chmod -R 775 storage bootstrap/cache"
+docker compose exec app bash -c "chmod -R 777 storage bootstrap/cache"
 
 # Roda migrations e seeders (opcional)
 printf '\n==> Rodando migrations e seeders...\n'
