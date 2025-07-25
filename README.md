@@ -14,7 +14,7 @@
 
 2. Dê permissão ao script (se necessário):
    ```bash
-   chmod +x script.sh
+   chmod +x start.sh
    ```
 
 3. Execute o script para subir o ambiente:
@@ -51,7 +51,7 @@
 ### Observações
 
 - Configure as variáveis de ambiente se necessário.
-- Edite o `script.sh` conforme sua necessidade.
+- Edite o `start.sh` conforme sua necessidade.
 
 Em caso de dúvidas, abra uma issue no repositório.
 
