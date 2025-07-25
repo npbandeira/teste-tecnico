@@ -31,7 +31,7 @@
 
 - `Dockerfile` - configuração do container principal
 - `docker-compose.yml` - orquestração dos containers
-- `script.sh` - script para facilitar o uso
+- `start.sh` - script para facilitar o uso
 
 ### Dicas
 
